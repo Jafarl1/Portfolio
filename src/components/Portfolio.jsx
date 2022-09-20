@@ -57,7 +57,7 @@ function Portfolio() {
                 <h1>
                   {e.heading}
                 </h1> 
-                  <img src={e.image} alt='' />
+                  <img src={e.image} alt='My project' />
               </a>
             ))
           }

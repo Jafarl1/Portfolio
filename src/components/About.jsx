@@ -27,7 +27,8 @@ function About() {
       targetPosition.right > windowPosition.left &&
       targetPosition.left < windowPosition.right) {
       setSkillsView(true)
-    } else {
+    }
+    else {
       setSkillsView(false)
     };
   };
@@ -35,8 +36,6 @@ function About() {
   window.addEventListener('scroll', () => {
     Visible(skills_box);
   });
-
-
 
 
   return (

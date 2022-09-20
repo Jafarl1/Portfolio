@@ -9,35 +9,35 @@ function Home() {
   const Visible = (el) => {
 
     let targetPosition = {
-        top: window.pageYOffset + el.current.getBoundingClientRect().top,
-        left: window.pageXOffset + el.current.getBoundingClientRect().left,
-        right: window.pageXOffset + el.current.getBoundingClientRect().right,
-        bottom: window.pageYOffset + el.current.getBoundingClientRect().bottom
-      },
+      top: window.pageYOffset + el.current.getBoundingClientRect().top,
+      left: window.pageXOffset + el.current.getBoundingClientRect().left,
+      right: window.pageXOffset + el.current.getBoundingClientRect().right,
+      bottom: window.pageYOffset + el.current.getBoundingClientRect().bottom
+    },
       windowPosition = {
         top: window.pageYOffset,
         left: window.pageXOffset,
         right: window.pageXOffset + document.documentElement.clientWidth,
         bottom: window.pageYOffset + document.documentElement.clientHeight
       };
-  
+
     if (targetPosition.bottom > windowPosition.top &&
       targetPosition.top < windowPosition.bottom &&
       targetPosition.right > windowPosition.left &&
       targetPosition.left < windowPosition.right) {
-        setView(true);
+      setView(true);
     } else {
       setView(false);
     };
   };
-  
+
   window.addEventListener('scroll', () => {
-    Visible(dev);
+    Visible(dev)
   });
 
-  useEffect(()=>{
-    Visible(dev);
-  },[])
+  useEffect(() => {
+    Visible(dev)
+  }, [])
 
   return (
     <div className="home_page" id='home'>

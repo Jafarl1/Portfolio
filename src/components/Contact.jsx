@@ -1,16 +1,27 @@
 import React from 'react'
 
+
 function Contact() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    alert(`
+    let lens = [];
+    let info = e.target.querySelectorAll('.form_item');
+    info.forEach(a => {
+      lens.push(a.value.length)
+    })
+    if (lens.includes(0)) {
+      alert('Some filed are empty!')
+    }
+    else {
+      alert(`
       Name:  ${e.target.querySelector('#name').value}
       Surname:  ${e.target.querySelector('#surname').value}
       Mail:  ${e.target.querySelector('#email').value}
       Comment:  ${e.target.querySelector('#text').value}
-    `)
-    e.target.reset();
+      `)
+      e.target.reset();
+    }
   }
 
 
@@ -28,8 +39,8 @@ function Contact() {
               Get In Touch
             </span>
             <input type="text" className='form_item' id='name' placeholder='Name' />
-            <input type="text" className='form_item' id='surname' placeholder='Surname'/>
-            <input type="email" className='form_item' name="email" id="email" placeholder='E-mail'/>
+            <input type="text" className='form_item' id='surname' placeholder='Surname' />
+            <input type="email" className='form_item' name="email" id="email" placeholder='E-mail' />
             <textarea name="text" className='form_item' id="text" placeholder='Your message'></textarea>
             <div className="button">
               <button id='submit_btn'>

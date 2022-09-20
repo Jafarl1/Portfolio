@@ -6,10 +6,7 @@ import "swiper/css/effect-coverflow"
 import "swiper/css/pagination"
 
 
-
-
 function Testimonnials() {
-
 
 
   return (
@@ -136,7 +133,7 @@ function Testimonnials() {
       </div>
       <div className="companies">
         <div className="company">
-        <a href="https://www.paypal.com/ru/home" target='_blank'>
+          <a href="https://www.paypal.com/ru/home" target='_blank'>
             <img src="https://cdn-icons-png.flaticon.com/512/888/888870.png" alt="PayPAl" />
           </a>
         </div>
