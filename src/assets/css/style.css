@@ -16,6 +16,9 @@ html {
 ::-webkit-scrollbar {
   display: none;
 }
+::selection {
+  background-color: transparent !important;
+}
 .App {
   width: 100%;
   height: auto;
@@ -147,6 +150,9 @@ html {
   position: relative;
   padding-left: 120px;
 }
+.home .line_span::after {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .line_span::after {
   content: "";
   position: absolute;
@@ -154,7 +160,7 @@ html {
   left: 0;
   width: 100px;
   height: 4px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--yellow);
   border-radius: 2px;
 }
 .home .info .name {
@@ -289,9 +295,6 @@ html {
   font-size: 18px;
   margin-top: 30px;
 }
-.about_info .line_span::after {
-  background-color: var(--yellow);
-}
 .about_info .socials {
   font-size: 20px;
   display: flex;
@@ -354,9 +357,6 @@ html {
 .what_i_do {
   width: 100%;
   height: 110px;
-}
-.what_i_do .line_span:after {
-  background-color: var(--yellow);
 }
 .what_i_do h1 {
   font-size: 60px;
@@ -440,7 +440,7 @@ html {
   display: flex;
   justify-content: space-between;
 }
-.portfolio_head {
+.vertical_head {
   width: 16%;
   height: 100vh;
   background-color: var(--yellow);
@@ -448,7 +448,7 @@ html {
   justify-content: center;
   align-items: center;
 }
-.portfolio_head h1 {
+.vertical_head h1 {
   font-size: 70px;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -532,7 +532,7 @@ html {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  transition: .6s;
+  transition: 0.6s;
   opacity: 0;
   z-index: -1;
 }
@@ -550,7 +550,7 @@ html {
   color: var(--yellow);
   opacity: 0;
   z-index: 2;
-  transition: .8s;
+  transition: 0.8s;
   transition-delay: 0.1s;
 }
 .project:hover .overlay {
@@ -565,9 +565,239 @@ html {
   width: 100%;
 }
 
+/* T E S T I M O N N I A L S  */
 
+.testimonnials_page {
+  width: 100%;
+  padding-top: 60px;
+}
+.reviews {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reviews .headline {
+  margin-left: 100px;
+}
+.reviews .line_span {
+  font-size: 26px;
+}
+.reviews h1 {
+  font-size: 70px;
+}
+.mySwiper {
+  height: 100%;
+}
+.swiper {
+  width: 100%;
+  height: 530px !important;
+  padding-top: 50px !important;
+  box-shadow: 0px -200px 200px -200px inset #ffb300a0;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px !important;
+  height: 400px !important;
+  padding: 20px 40px;
+  border-radius: 8px;
+  background-color: var(--back);
+  box-shadow: 0px 0px 30px 0px rgba(163, 163, 163, 0.6);
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+.swiper-pagination-bullet {
+  margin-bottom: 15px !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: rgba(128, 128, 128, 0.7) !important;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.swiper-pagination-bullet:hover:not(.swiper-pagination-bullet-active) {
+  background-color: #666 !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--yellow) !important;
+}
+.customer {
+  width: 100%;
+  height: 25%;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 30px;
+}
+.customer img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid var(--yellow);
+}
+.customer_info {
+  color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  letter-spacing: 0.5px;
+}
+.companies {
+  width: 100%;
+  min-height: 200px;
+  background-color: #ffdf9f;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 5%;
+}
+.company {
+  width: 210px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.company a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.company a img {
+  width: 60%;
+  transition: 0.3s;
+}
+.company:first-child a img {
+  width: 50%;
+}
+.company a:hover img {
+  transform: scale(1.1);
+}
 
+/* C O N T A C T */
 
+.contact_page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.contact_page .vertical_head {
+  background: rgb(255, 177, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 177, 0, 1) 20%,
+    rgba(255, 223, 159, 1) 100%
+  );
+}
+.contacts {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.touch,
+.map {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.touch {
+  padding: 120px 80px;
+}
+.touch form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.touch form input {
+  padding-bottom: 20px;
+}
+.touch form span {
+  margin-bottom: 30px;
+}
+.form_item {
+  width: 100% !important;
+  min-height: 50px;
+  margin-top: 30px;
+  padding-left: 5px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #999;
+  background-color: var(--back);
+  font-size: 20px;
+  color: #666;
+}
+.form_item::placeholder {
+  opacity: 0.4;
+}
+.form_item:last-child {
+  margin-top: 30px;
+}
+.form_item:focus {
+  border-bottom: 2px solid var(--yellow);
+}
+.button {
+  width: 200px;
+  min-height: 60px;
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.button::before {
+  content: "";
+  width: 184px;
+  height: 44px;
+  position: absolute;
+  top: -30px;
+  left: -165px;
+  background-color: var(--yellow);
+  transition: 1s;
+}
+.button::after {
+  content: "";
+  width: 184px;
+  height: 44px;
+  position: absolute;
+  bottom: -30px;
+  right: -165px;
+  background-color: var(--yellow);
+  transition: 1s;
+}
+#submit_btn {
+  width: 194px;
+  height: 53.5px;
+  background-color: var(--back);
+  outline: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border: 1px solid var(--back);
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: 0.5s;
+  z-index: 1;
+}
+.button:hover #submit_btn {
+  color: var(--yellow);
+}
+.button:hover::before {
+  top: 0;
+  left: 0;
+}
+.button:hover::after {
+  bottom: 0;
+  right: 0;
+}
 
 @media screen and (max-width: 1492px) {
   .service {
@@ -607,6 +837,12 @@ html {
   }
   .project {
     height: 40%;
+  }
+  .headline span {
+    font-size: 24px;
+  }
+  .headline h1 {
+    font-size: 60px;
   }
 }
 @media screen and (max-width: 1292px) {
@@ -663,6 +899,12 @@ html {
   .items {
     gap: 50px;
   }
+  .headline span {
+    font-size: 22px;
+  }
+  .headline h1 {
+    font-size: 50px;
+  }
 }
 @media screen and (max-width: 1085px) {
   .all_services {
@@ -683,6 +925,31 @@ html {
   }
   .items {
     gap: 30px;
+  }
+  .headline span {
+    font-size: 20px !important;
+  }
+  .headline h1 {
+    font-size: 45px;
+  }
+  .contacts {
+    flex-wrap: wrap;
+  }
+  .touch form span {
+    margin-bottom: 0;
+  }
+  .touch {
+    width: 100%;
+    height: 70%;
+    padding: 40px 50px;
+  }
+  .map {
+    width: 100%;
+    height: 30%;
+  }
+  .form_item {
+    min-height: 40px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 840px) {
@@ -705,6 +972,12 @@ html {
   .items {
     gap: 25px;
   }
+  .headline span {
+    font-size: 18px !important;
+  }
+  .headline h1 {
+    font-size: 40px;
+  }
 }
 @media screen and (max-width: 770px) {
   .project {
@@ -718,6 +991,9 @@ html {
   }
   .filter {
     gap: 25px;
+  }
+  .reviews .headline {
+    margin-left: 70px;
   }
 }
 @media screen and (max-width: 650px) {
@@ -751,6 +1027,9 @@ html {
   }
   .my_portfolio {
     padding: 30px;
+  }
+  .reviews .headline {
+    margin-left: 60px;
   }
 }
 @media screen and (max-width: 560px) {

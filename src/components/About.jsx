@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import CountUp from 'react-countup';
+import CountUp from 'react-countup'
 
 
 function About() {

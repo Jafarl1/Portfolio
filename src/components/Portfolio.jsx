@@ -27,7 +27,7 @@ function Portfolio() {
 
   return (
     <div className="portfolio_page" id='portfolio'>
-      <div className="portfolio_head">
+      <div className="vertical_head">
         <h1>
           Portfolio
         </h1>

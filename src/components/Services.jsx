@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
-import CountUp from 'react-countup';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import CountUp from 'react-countup'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 

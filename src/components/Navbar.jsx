@@ -42,7 +42,7 @@ function Navbar() {
             Portfolio
           </a>
           <a className='link_to_component'>
-            Testimonials
+            Testimonnials
           </a>
           <a className='link_to_component'>
             Contact
