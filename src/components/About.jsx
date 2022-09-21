@@ -1,8 +1,11 @@
 import React, { useState, useRef } from 'react'
 import CountUp from 'react-countup'
+import { useSelector } from 'react-redux'
 
 
 function About() {
+
+  let { mySkills, socials } = useSelector(state => state);
 
   const [skillsView, setSkillsView] = useState(false);
   const skills_box = useRef();
@@ -55,18 +58,13 @@ function About() {
             studying new technologies. I love my profession and I'm set for great success. My english is intermediate level now, but I'm working on it to bring it to perfection. You can find my projects on my Github page.
           </p>
           <div className="socials">
-            <a href="https://github.com/Jafarl1" target='_blank'>
-              <i className="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/zohrab-jafarli-bb10aa208/" target='_blank'>
-              <i className="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/z_jafarli/" target='_blank'>
-              <i className="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/zjafarli" target='_blank'>
-              <i className="fa-brands fa-facebook-f"></i>
-            </a>
+            {
+              socials.map(a => (
+                <a href={a.link} key={a.id} target='_blank'>
+                  <i className={a.logo}></i>
+                </a>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -76,60 +74,21 @@ function About() {
             My Skills
           </span>
           <div className="all_skills" ref={skills_box}>
-            <div className="html_skill">
-              <div className="top">
-                <span>HTML</span>
-                <span className="percent">
-                  <CountUp start={0} end={skillsView ? 95 : 0} duration={2} suffix="%" />
-                </span>
-              </div>
-              <div className="skill_line" style={skillsView ? { width: '95%' } : { width: '0%' }}></div>
-            </div>
-            <div className="css_skill">
-              <div className="top">
-                <span>CSS</span>
-                <span className="percent">
-                  <CountUp start={0} end={skillsView ? 90 : 0} duration={2} suffix="%" />
-                </span>
-              </div>
-              <div className="skill_line" style={skillsView ? { width: '90%' } : { width: '0%' }}></div>
-            </div>
-            <div className="js_skill">
-              <div className="top">
-                <span>JavaScript</span>
-                <span className="percent">
-                  <CountUp start={0} end={skillsView ? 70 : 0} duration={2} suffix="%" />
-                </span>
-              </div>
-              <div className="skill_line" style={skillsView ? { width: '70%' } : { width: '0%' }}></div>
-            </div>
-            <div className="react_skill">
-              <div className="top">
-                <span>React JS</span>
-                <span className="percent">
-                  <CountUp start={0} end={skillsView ? 80 : 0} duration={2} suffix="%" />
-                </span>
-              </div>
-              <div className="skill_line" style={skillsView ? { width: '80%' } : { width: '0%' }}></div>
-            </div>
-            <div className="bootstrap_skill">
-              <div className="top">
-                <span>Bootstrap</span>
-                <span className="percent">
-                  <CountUp start={0} end={skillsView ? 60 : 0} duration={2} suffix="%" />
-                </span>
-              </div>
-              <div className="skill_line" style={skillsView ? { width: '60%' } : { width: '0%' }}></div>
-            </div>
-            <div className="jquery_skill">
-              <div className="top">
-                <span>JQuery</span>
-                <span className="percent">
-                  <CountUp start={0} end={skillsView ? 50 : 0} duration={2} suffix="%" />
-                </span>
-              </div>
-              <div className="skill_line" style={skillsView ? { width: '50%' } : { width: '0%' }}></div>
-            </div>
+            {
+              mySkills.map(e => (
+                <div className="my_skill" key={e.id}>
+                  <div className="top">
+                    <span>
+                      {e.skill}
+                    </span>
+                    <span className="percent">
+                      <CountUp start={0} end={skillsView ? e.max : 0} duration={2} suffix="%" />
+                    </span>
+                  </div>
+                  <div className="skill_line" style={skillsView ? { width: `${e.max}%` } : { width: '0%' }}></div>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>

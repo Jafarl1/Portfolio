@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+
 
 function Navbar() {
 
   const [openNav, setOpenNav] = useState(false);
+
+  let { navbar } = useSelector(state => state);
 
   window.addEventListener('click', () => setOpenNav(false));
 
@@ -29,24 +33,13 @@ function Navbar() {
           <i className="fa-solid fa-xmark" onClick={() => setOpenNav(!openNav)}></i>
         </div>
         <div className="links">
-          <a className='link_to_component'>
-            Home
-          </a>
-          <a className='link_to_component'>
-            About
-          </a>
-          <a className='link_to_component'>
-            Services
-          </a>
-          <a className='link_to_component'>
-            Portfolio
-          </a>
-          <a className='link_to_component'>
-            Testimonnials
-          </a>
-          <a className='link_to_component'>
-            Contact
-          </a>
+          {
+            navbar.map(a => (
+              <a className='link_to_component' key={a.id}>
+                {a.link}
+              </a>
+            ))
+          }
         </div>
       </div>
     </>

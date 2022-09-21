@@ -5,7 +5,6 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 
-
 function Services() {
 
   AOS.init({
@@ -13,8 +12,7 @@ function Services() {
     easing: 'ease'
   });
 
-  let { services } = useSelector(state => state);
-
+  let { services, inlineItems } = useSelector(state => state);
 
   const [whatIDo, setWhatIDo] = useState(false);
   const [lineView, setLineView] = useState(false);
@@ -79,21 +77,20 @@ function Services() {
 
   let windowInnerWidth = window.innerWidth;
 
-
   return (
     <div className="services_page" id='services'>
       <div className="what_i_do">
         <span className='line_span'>
           Services
         </span>
-        <h1 ref={top} className={whatIDo && 'top_anim'}>
+        <h1 ref={top} className={whatIDo ? 'top_anim' : ''}>
           What I do
         </h1>
       </div>
       <div className="all_services">
         {
           services.map(e => (
-            <div className="service" data-aos={windowInnerWidth > 1492 ? e.aos : "zoom-in"}>
+            <div className="service" key={e.id} data-aos={windowInnerWidth > 1492 ? e.aos : "zoom-in"}>
               <i className={e.logo} style={{ color: e.color }}></i>
               <div className="service_info">
                 <h2>
@@ -109,26 +106,17 @@ function Services() {
       </div>
       <div className="foot_line">
         <div className="in_line" ref={line}>
-          <div className="inline_item">
-            <i className="fa-solid fa-face-smile"></i>
-            <CountUp start={0} end={lineView ? 100 : 0} duration={2.5} suffix="<sup>+</sup>" />
-            <span>Happy Clients</span>
-          </div>
-          <div className="inline_item">
-            <i className="fa-solid fa-pizza-slice"></i>
-            <CountUp start={0} end={lineView ? 1000 : 0} duration={2.5} suffix="<sup>+</sup>" />
-            <span>Pizzas ordered</span>
-          </div>
-          <div className="inline_item">
-            <i className="fa-solid fa-quote-right"></i>
-            <CountUp start={0} end={lineView ? 500 : 0} duration={2.5} suffix="<sup>+</sup>" />
-            <span>Reviews</span>
-          </div>
-          <div className="inline_item">
-            <i className="fa-solid fa-code"></i>
-            <CountUp start={0} end={lineView ? 50000 : 0} duration={2.5} />
-            <span>Lines of code</span>
-          </div>
+          {
+            inlineItems.map(a => (
+              <div className="inline_item" key={a.id}>
+                <i className={a.logo}></i>
+                  <CountUp start={0} end={lineView ? a.max : 0} duration={2.5} suffix={a.suffix ? a.suffix : ''} />
+                <span>
+                  {a.text}
+                </span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>

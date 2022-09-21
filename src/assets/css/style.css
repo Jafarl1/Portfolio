@@ -327,7 +327,7 @@ html {
   width: 85%;
   height: auto;
 }
-[class$="_skill"] {
+.my_skill {
   width: 100%;
   height: 80px;
   display: flex;
@@ -335,12 +335,12 @@ html {
   justify-content: space-between;
   padding: 15px 0px;
 }
-[class$="_skill"] .top {
+.my_skill .top {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-[class$="_skill"] .top span {
+.my_skill .top span {
   font-size: 20px;
   font-weight: 600;
 }

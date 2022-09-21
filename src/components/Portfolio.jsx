@@ -22,9 +22,7 @@ function Portfolio() {
     }
   }, [chosen])
 
-
-
-
+  
   return (
     <div className="portfolio_page" id='portfolio'>
       <div className="vertical_head">
