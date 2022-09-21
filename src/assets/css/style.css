@@ -180,6 +180,8 @@ html {
   height: 60px;
   margin-top: 20px;
   background-color: black;
+  border: none;
+  outline: none;
   color: var(--yellow);
   text-transform: uppercase;
   font-size: 18px;
@@ -959,6 +961,9 @@ html {
   .home .info {
     padding: 100px 10%;
   }
+  .home .info .name {
+    font-size: 50px;
+  }
   .service {
     padding: 0 !important;
   }
@@ -1042,4 +1047,107 @@ html {
   .filter {
     gap: 15px;
   }
+  .line_span::after {
+    width: 60px;
+  }
+  .line_span {
+    font-size: 24px;
+    padding-left: 80px;
+  }
+  .home .info .name {
+    font-size: 40px;
+  }
+  .home .info .dev {
+    width: 300px;
+    font-size: 28px;
+  }
+  .home_page {
+    padding: 60px 10px;
+    min-height: auto;
+  }
+  .about_me {
+    padding: 0px 10px;
+    min-height: auto;
+  }
+  .more_about {
+    font-size: 50px;
+  }
+  .skills {
+    padding: 50px 20px;
+    min-height: auto;
+  }
+  .all_skills {
+    width: 100%;
+  }
+  .about_info .socials {
+    margin-bottom: 30px;
+  }
+  .services_page {
+    padding: 60px 10px 120px 10px !important;
+    padding: 60px 10px;
+  }
+  .service {
+    padding: 10px 0px !important;
+    height: auto;
+  }
+  .inline_item {
+    font-size: 22px;
+  }
+  .inline_item span:last-child {
+    font-size: 12px;
+  }
+  .services_page .foot_line {
+    height: 90px;
+  }
+  .items {
+    height: auto;
+    max-height: 765px;
+  }
+  .my_portfolio label {
+    font-size: 10px;
+  }
+  .project {
+    height: 115px;
+  }
+  .project h1 {
+    font-size: 30px;
+  }
+  .headline {
+    margin-left: 20px !important;
+  }
+  .swiper-slide {
+    width: 300px !important;
+    height: 300px !important;
+    padding: 20px;
+  }
+  .customer {
+    margin-bottom: 20px;
+    gap: 10px;
+    padding-left: 0px;
+  }
+  .swiper {
+    height: 429px !important;
+    
+  }
+  .reviews {
+    height: auto;
+    justify-content: flex-start;
+  }
+  [class$="_page"] {
+    min-height: auto;
+  }
+  .companies {
+    padding: 20px 0;
+  }
+  .company {
+    width: 180px;
+  }
+  .touch {
+    height: 60%;
+    padding: 30px 20px;
+  }
+  .map {
+    height: 40%;
+  }
+
 }
