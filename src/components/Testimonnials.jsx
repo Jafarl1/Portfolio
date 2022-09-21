@@ -158,7 +158,7 @@ function Testimonnials() {
           </a>
         </div>
         <div className="company">
-          <a href="https://www.fedex.com/ru-ru/home.html" target='_blank'>
+          <a href="https://www.ebay.com/" target='_blank'>
             <img src="https://cdn-icons-png.flaticon.com/512/5977/5977581.png" alt="ebay" />
           </a>
         </div>

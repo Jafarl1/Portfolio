@@ -731,6 +731,7 @@ html {
   outline: none;
   border: none;
   border-bottom: 1px solid #999;
+  border-radius: 0px;
   background-color: var(--back);
   font-size: 20px;
   color: #666;
@@ -775,6 +776,7 @@ html {
 #submit_btn {
   width: 194px;
   height: 53.5px;
+  color: #666;
   background-color: var(--back);
   outline: none;
   text-transform: uppercase;
@@ -1148,5 +1150,14 @@ html {
   .map {
     height: 40%;
   }
-
+  .nav_menu {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+  }
+  .open {
+    left: 0;
+    opacity: 1;
+  }
 }
