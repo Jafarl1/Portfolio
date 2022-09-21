@@ -807,6 +807,9 @@ html {
 }
 
 @media screen and (max-width: 1492px) {
+  [class$="_page"] {
+    min-height: auto;
+  }
   .service {
     width: 50%;
   }

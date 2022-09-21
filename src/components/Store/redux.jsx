@@ -1,4 +1,48 @@
 const initState = {
+    services: [
+        {
+            name: 'Frontend React JS',
+            description: "One of the main benefits of using React JS is its potential to reuse components. It saves time for developers as they don't have to write various codes for the same features.",
+            logo: "fa-brands fa-react",
+            color: "#00D5F7",
+            aos: "fade-right"
+        },
+        {
+            name: "Angular Web App",
+            description: "Angular allows developers to focus on the core functionalities of the application without worrying about little things. Angular is backed by Google and well established.", 
+            logo: "fa-brands fa-angular",
+            color: "#D6002F",
+            aos: "fade-down"
+        },
+        {
+            name: "Vue JS App",
+            description: "Vue provides a structure for projects and a set of tools to help teams of developers create and maintain websites and web apps quickly and easily.", 
+            logo: "fa-brands fa-vuejs",
+            color: "#3FB27F",
+            aos: "fade-left"
+        },
+        {
+            name: "AWS Management",
+            description: "Through the console, a customer can manage their cloud computing, cloud storage and other resources running on the Amazon Web Services infrastructure.", 
+            logo: "fa-brands fa-aws",
+            color: "#F79400",
+            aos: "fade-right"
+        },
+        {
+            name: "Server Management",
+            description: "Service Management provides a framework to structure IT-related activities and the interactions of IT technical personnel with customers and clients.", 
+            logo: "fa-solid fa-server",
+            color: "#E093F7",
+            aos: "fade-up"
+        },
+        {
+            name: "Artifical Intelligence",
+            description: "Artificial intelligence is the ability of a computer or a robot controlled by a computer to do tasks that are usually done by humans because they require human intelligence and discernment.", 
+            logo: "fa-solid fa-robot",
+            color: "#00BCAD",
+            aos: "fade-left"
+        }
+    ],
     projects: [
         {
             id: 1,
