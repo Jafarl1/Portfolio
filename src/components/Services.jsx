@@ -73,6 +73,12 @@ function Services() {
     VisibleTop();
   });
 
+  let windowInnerWidth = window.innerWidth;
+  console.log(windowInnerWidth);
+
+
+  let x = true;
+
 
 
 
@@ -87,7 +93,7 @@ function Services() {
         </h1>
       </div>
       <div className="all_services">
-        <div className="service" data-aos="fade-right">
+        <div className="service" data-aos={windowInnerWidth > 1492 ? "fade-right" : "zoom-in"}>
           <i className="fa-brands fa-react" style={{ color: '#00D5F7' }}></i>
           <div className="service_info">
             <h2>
@@ -98,7 +104,7 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className="service" data-aos="fade-down">
+        <div className="service" data-aos={windowInnerWidth > 1492 ? "fade-down" : "zoom-in"}>
           <i className="fa-brands fa-angular" style={{ color: '#D6002F' }}></i>
           <div className="service_info">
             <h2>
@@ -109,7 +115,7 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className="service" data-aos="fade-left">
+        <div className="service" data-aos={windowInnerWidth > 1492 ? "fade-left" : "zoom-in"}>
           <i className="fa-brands fa-vuejs" style={{ color: '#3FB27F' }}></i>
           <div className="service_info">
             <h2>
@@ -120,7 +126,7 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className="service" data-aos="fade-right">
+        <div className="service" data-aos={windowInnerWidth > 1492 ? "fade-right" : "zoom-in"}>
           <i className="fa-brands fa-aws" style={{ color: '#F79400' }}></i>
           <div className="service_info">
             <h2>
@@ -131,7 +137,7 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className="service" data-aos="fade-up">
+        <div className="service" data-aos={windowInnerWidth > 1492 ? "fade-up" : "zoom-in"}>
           <i className="fa-solid fa-server" style={{ color: '#E093F7' }}></i>
           <div className="service_info">
             <h2>
@@ -142,7 +148,7 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className="service" data-aos="fade-left">
+        <div className="service" data-aos={windowInnerWidth > 1492 ? "fade-left" : "zoom-in"}>
           <i className="fa-solid fa-robot" style={{ color: '#00BCAD' }}></i>
           <div className="service_info">
             <h2>

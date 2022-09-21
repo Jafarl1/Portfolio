@@ -109,7 +109,6 @@ html {
 .nav_menu .links a:hover::after {
   transform: rotateY(0);
 }
-
 [class$="_page"] {
   width: 100%;
   min-height: 100vh;
