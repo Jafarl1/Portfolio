@@ -74,12 +74,6 @@ function Services() {
   });
 
   let windowInnerWidth = window.innerWidth;
-  console.log(windowInnerWidth);
-
-
-  let x = true;
-
-
 
 
   return (
