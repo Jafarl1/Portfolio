@@ -1,28 +1,57 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'
 
 
 function Contact() {
 
+  const form = useRef();
+
   const submitForm = (e) => {
     e.preventDefault();
+
     let lens = [];
     let info = e.target.querySelectorAll('.form_item');
     info.forEach(a => {
       lens.push(a.value.length)
-    })
+    });
+
     if (lens.includes(0)) {
-      alert('Some filed are empty!')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please fill in all fields!'
+      });
+      info.forEach(a => {
+        if (a.value.length === 0) {
+          a.classList.add('emptyField')
+        }
+      });
     }
     else {
-      alert(`
-      Name:  ${e.target.querySelector('#name').value}
-      Surname:  ${e.target.querySelector('#surname').value}
-      Mail:  ${e.target.querySelector('#email').value}
-      Comment:  ${e.target.querySelector('#text').value}
-      `)
+      emailjs.sendForm('service_eqbulxg', 'template_5aem7vc', form.current, 'd8aUAvJgyEbxROVd2')
+        .then((result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
+        });
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your message has been sent to Zohrab!',
+      })
       e.target.reset();
     }
-  }
+  };
+
+  const checkValue = (e) => {
+    if (e.target.value.length < 1) {
+      e.target.classList.add('emptyField');
+    }
+    else {
+      e.target.classList.remove('emptyField');
+    }
+  };
 
 
   return (
@@ -34,14 +63,14 @@ function Contact() {
       </div>
       <div className="contacts">
         <div className="touch">
-          <form onSubmit={(e) => submitForm(e)}>
+          <form ref={form} onSubmit={(e) => submitForm(e)}>
             <span className='line_span'>
               Get In Touch
             </span>
-            <input type="text" className='form_item' id='name' placeholder='Name' />
-            <input type="text" className='form_item' id='surname' placeholder='Surname' />
-            <input type="email" className='form_item' name="email" id="email" placeholder='E-mail' />
-            <textarea name="text" className='form_item' id="text" placeholder='Your message'></textarea>
+            <input type="text" className='form_item' name='name' placeholder='Name Surname' onChange={(e) => checkValue(e)} />
+            <input type="text" className='form_item' name='subject' placeholder='Subject' onChange={(e) => checkValue(e)} />
+            <input type="email" className='form_item' name="email" placeholder='E-mail' onChange={(e) => checkValue(e)} />
+            <textarea className='form_item' name="text" placeholder='Your message' onChange={(e) => checkValue(e)}></textarea>
             <div className="button">
               <button id='submit_btn'>
                 Send Message

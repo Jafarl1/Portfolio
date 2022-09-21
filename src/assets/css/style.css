@@ -805,6 +805,12 @@ html {
   bottom: 0;
   right: 0;
 }
+.emptyField {
+  border-bottom: 2px solid red !important;
+}
+.swal2-confirm {
+  background-color: var(--yellow) !important;
+}
 
 @media screen and (max-width: 1492px) {
   [class$="_page"] {
