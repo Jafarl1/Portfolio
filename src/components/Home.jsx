@@ -52,9 +52,9 @@ function Home() {
           <h1 ref={dev} className={view ? 'dev typing_anim' : 'dev'}>
             Frontend Developer
           </h1>
-          <button className='CV'>
-            Download cv
-          </button>
+          <a href="https://drive.google.com/file/d/1A-0sh4IxF_cyLovLKblYuHle9DmnOe_5/view?usp=sharing" target='_blank' className='CV'>
+            Look at cv
+          </a>
         </div>
         <div className="img">
           <img src={myImg} alt="My photo" />
