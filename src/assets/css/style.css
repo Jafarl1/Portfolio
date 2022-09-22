@@ -811,6 +811,9 @@ html {
 .swal2-confirm {
   background-color: var(--yellow) !important;
 }
+.loader {
+  transition: 1s;
+}
 
 @media screen and (max-width: 1492px) {
   [class$="_page"] {

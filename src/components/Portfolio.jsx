@@ -11,10 +11,10 @@ function Portfolio() {
   const [chosen, setChosen] = useState('all');
   const [data, setData] = useState([]);
 
-  let { projects } = useSelector(state => state);
+  let { filters, projects } = useSelector(state => state);
 
   useEffect(() => {
-    if(chosen !== 'all'){
+    if (chosen !== 'all') {
       let filtered = projects.filter(e => e.type === chosen);
       setData(filtered);
     }
@@ -23,7 +23,6 @@ function Portfolio() {
     }
   }, [chosen])
 
-  
   return (
     <div className="portfolio_page" id='portfolio'>
       <div className="vertical_head">
@@ -33,20 +32,14 @@ function Portfolio() {
       </div>
       <div className="my_portfolio">
         <div className="filter">
-          <input type="radio" name="name" id="all" defaultChecked onClick={(e) => checkFilter(e)} />
-          <label htmlFor="all"> All </label>
-
-          <input type="radio" name="name" id="js" onClick={(e) => checkFilter(e)} />
-          <label htmlFor="js"> JavaScript </label>
-
-          <input type="radio" name="name" id="react" onClick={(e) => checkFilter(e)} />
-          <label htmlFor="react"> React Js </label>
-
-          <input type="radio" name="name" id="angular" onClick={(e) => checkFilter(e)} />
-          <label htmlFor="angular"> Angular Js </label>
-
-          <input type="radio" name="name" id="vue" onClick={(e) => checkFilter(e)} />
-          <label htmlFor="vue"> Vue Js </label>
+          {
+            filters.map(e => (
+              <div key={e.id}>
+                <input type="radio" name="name" id={e.id} onClick={(a) => checkFilter(a)} defaultChecked={e.id === 'all'} />
+                <label htmlFor={e.id}> {e.text} </label>
+              </div>
+            ))
+          }
         </div>
         <div className="items">
           {
@@ -55,8 +48,8 @@ function Portfolio() {
                 <div className="overlay"></div>
                 <h1>
                   {e.heading}
-                </h1> 
-                  <img src={e.image} alt='My project' />
+                </h1>
+                <img src={e.image} alt='My project' />
               </a>
             ))
           }

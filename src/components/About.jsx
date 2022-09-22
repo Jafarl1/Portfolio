@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 function About() {
 
-  let { mySkills, socials } = useSelector(state => state);
+  let { me, mySkills, socials } = useSelector(state => state);
 
   const [skillsView, setSkillsView] = useState(false);
   const skills_box = useRef();
@@ -49,13 +49,12 @@ function About() {
             About Me
           </span>
           <h1 className='more_about'>
-            I'm a Frontend web developer working remote
+            {me.who}
           </h1>
           <span className='line_span'>
           </span>
           <p>
-            I'm frontend developer with strong basic knowledges. At the moment I am working in this sphere and also
-            studying new technologies. I love my profession and I'm set for great success. My english is intermediate level now, but I'm working on it to bring it to perfection. You can find my projects on my Github page.
+            {me.more}
           </p>
           <div className="socials">
             {

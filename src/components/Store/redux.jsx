@@ -7,6 +7,7 @@ import portfolio from '../../assets/images/screenshots/portfolio.png'
 import tickets from '../../assets/images/screenshots/tickets.png'
 import vue from '../../assets/images/screenshots/vue.png'
 
+
 const initState = {
     navbar: [
         {
@@ -34,6 +35,10 @@ const initState = {
             link: "Contact"
         }
     ],
+    me: {
+            who: "I'm a Frontend web developer working remote",
+            more: "I'm frontend developer with strong basic knowledges. At the moment I am working in this sphere and also studying new technologies. I love my profession and I'm set for great success. My english is intermediate level now, but I'm working on it to bring it to perfection. You can find my projects on my Github page."
+    },
     mySkills: [
         {
             id: 1,
@@ -166,6 +171,28 @@ const initState = {
             max: 50000,
             text: "Lines of code"
         }
+    ],
+    filters: [
+        {
+           id: "all",
+           text: "All",
+        },
+        {
+            id: "js",
+            text: "JavaScript",
+         },
+         {
+            id: "react",
+            text: "React Js",
+         },
+         {
+            id: "angular",
+            text: "Angular Js",
+         },
+         {
+            id: "vue",
+            text: "Vue Js",
+         }
     ],
     projects: [
         {
