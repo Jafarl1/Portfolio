@@ -3,7 +3,7 @@ import CountUp from 'react-countup'
 import { useSelector } from 'react-redux'
 
 
-function About() {
+function About({theme}) {
 
   let { me, mySkills, socials } = useSelector(state => state);
 
@@ -44,7 +44,7 @@ function About() {
   return (
     <div className="about_page" id='about'>
       <div className="about_me">
-        <div className="about_info">
+        <div className={theme === 'light' ? 'about_info' : 'about_info dark_font'}>
           <span className='line_span'>
             About Me
           </span>
@@ -53,14 +53,14 @@ function About() {
           </h1>
           <span className='line_span'>
           </span>
-          <p>
+          <p className={theme === 'dark' ? 'dark_font' : ''}>
             {me.more}
           </p>
           <div className="socials">
             {
               socials.map(a => (
                 <a href={a.link} key={a.id} target='_blank'>
-                  <i className={a.logo}></i>
+                  <i className={theme === 'light' ? a.logo : `${a.logo} dark_font`} ></i>
                 </a>
               ))
             }
@@ -75,7 +75,7 @@ function About() {
           <div className="all_skills" ref={skills_box}>
             {
               mySkills.map(e => (
-                <div className="my_skill" key={e.id}>
+                <div className='my_skill' key={e.id}>
                   <div className="top">
                     <span>
                       {e.skill}
@@ -84,7 +84,9 @@ function About() {
                       <CountUp start={0} end={skillsView ? e.max : 0} duration={2} suffix="%" />
                     </span>
                   </div>
-                  <div className="skill_line" style={skillsView ? { width: `${e.max}%` } : { width: '0%' }}></div>
+                  <div
+                    className='skill_line'
+                   style={skillsView ? { width: `${e.max}%` } : { width: '0%' }}></div>
                 </div>
               ))
             }

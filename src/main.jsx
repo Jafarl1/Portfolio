@@ -11,4 +11,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={str}>
         <App />
     </Provider>
+
 )

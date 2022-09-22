@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 
-function Portfolio() {
+function Portfolio({theme}) {
 
   const checkFilter = (e) => {
     setChosen(e.target.id);
@@ -26,7 +26,7 @@ function Portfolio() {
   return (
     <div className="portfolio_page" id='portfolio'>
       <div className="vertical_head">
-        <h1>
+        <h1 className={theme === 'dark' ? 'dark_font' : ''}>
           Portfolio
         </h1>
       </div>
@@ -34,14 +34,14 @@ function Portfolio() {
         <div className="filter">
           {
             filters.map(e => (
-              <div key={e.id}>
+              <div key={e.id} className={theme === 'dark' ? 'dark_font' : ''}>
                 <input type="radio" name="name" id={e.id} onClick={(a) => checkFilter(a)} defaultChecked={e.id === 'all'} />
                 <label htmlFor={e.id}> {e.text} </label>
               </div>
             ))
           }
         </div>
-        <div className="items">
+        <div className={theme === 'light' ? "items" : "items_dark"}>
           {
             data.map(e => (
               <a href={e.link} target='_blank' className="project" key={e.id}>

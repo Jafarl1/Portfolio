@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import ClipLoader  from "react-spinners/ClipLoader";
 
 
-function Contact() {
+function Contact({theme}) {
 
   const form = useRef();
 
@@ -72,14 +72,14 @@ function Contact() {
   return (
     <div className="contact_page" id='contact'>
       <div className="vertical_head">
-        <h1>
+        <h1 className={theme === 'dark' ? 'dark_font' : ''}>
           Contact
         </h1>
       </div>
       <div className="contacts">
         <div className="touch">
           <form ref={form} onSubmit={(e) => submitForm(e)}>
-            <span className='line_span'>
+            <span className={theme === 'light' ? 'line_span' : 'line_span dark_font'}>
               Get In Touch
             </span>
             <input type="text" className='form_item' name='name' placeholder='Name Surname' onChange={(e) => checkValue(e)} />
@@ -87,7 +87,7 @@ function Contact() {
             <input type="email" className='form_item' name="email" placeholder='E-mail' onChange={(e) => checkValue(e)} />
             <textarea className='form_item' name="text" placeholder='Your message' onChange={(e) => checkValue(e)}></textarea>
             <div className="button">
-              <button id='submit_btn'>
+              <button id='submit_btn' className={theme === 'dark' ? 'dark_btn' : ''}>
                 Send Message
               </button>
             </div>

@@ -7,7 +7,7 @@ import "swiper/css/effect-coverflow"
 import "swiper/css/pagination"
 
 
-function Testimonnials() {
+function Testimonnials({theme}) {
 
   let { customers, companies } = useSelector(state => state);
 
@@ -15,7 +15,7 @@ function Testimonnials() {
     <>
       <div className="testimonnials_page" id='testimonnials'>
         <div className="reviews">
-          <div className="headline">
+          <div className={theme === 'light' ? 'headline' : 'headline dark_font'}>
             <span className='line_span'>
               Testimonnials
             </span>

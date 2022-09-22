@@ -5,7 +5,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 
-function Services() {
+function Services({theme}) {
 
   AOS.init({
     duration: 1000,
@@ -18,7 +18,7 @@ function Services() {
   const [lineView, setLineView] = useState(false);
   const top = useRef();
   const line = useRef();
-
+  
   const Visible = (el) => {
 
     let targetPosition = {
@@ -80,10 +80,10 @@ function Services() {
   return (
     <div className="services_page" id='services'>
       <div className="what_i_do">
-        <span className='line_span'>
+        <span className={theme === 'light' ? 'line_span' : 'line_span dark_font'}>
           Services
         </span>
-        <h1 ref={top} className={whatIDo ? 'top_anim' : ''}>
+        <h1 ref={top} className={(whatIDo && theme === 'light') ? 'top_anim' : 'dark_top_anim dark_font'}>
           What I do
         </h1>
       </div>
@@ -92,7 +92,7 @@ function Services() {
           services.map(e => (
             <div className="service" key={e.id} data-aos={windowInnerWidth > 1492 ? e.aos : "zoom-in"}>
               <i className={e.logo} style={{ color: e.color }}></i>
-              <div className="service_info">
+              <div className={theme === 'light' ? 'service_info' : 'service_info dark_font'}>
                 <h2>
                   {e.name}
                 </h2>
@@ -108,10 +108,10 @@ function Services() {
         <div className="in_line" ref={line}>
           {
             inlineItems.map(a => (
-              <div className="inline_item" key={a.id}>
+              <div key={a.id} className={theme === 'light' ? 'inline_item' : 'inline_item dark_font'}>
                 <i className={a.logo}></i>
                   <CountUp start={0} end={lineView ? a.max : 0} duration={2.5} suffix={a.suffix ? a.suffix : ''} />
-                <span>
+                <span >
                   {a.text}
                 </span>
               </div>

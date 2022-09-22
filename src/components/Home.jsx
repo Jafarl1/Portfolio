@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import myImg from '../assets/images/Me.jpg'
 
-function Home() {
+function Home({theme}) {
 
   const [view, setView] = useState(false);
   const dev = useRef();
@@ -52,7 +52,10 @@ function Home() {
           <h1 ref={dev} className={view ? 'dev typing_anim' : 'dev'}>
             Frontend Developer
           </h1>
-          <a href="https://drive.google.com/file/d/1A-0sh4IxF_cyLovLKblYuHle9DmnOe_5/view?usp=sharing" target='_blank' className='CV'>
+          <a href="https://drive.google.com/file/d/1A-0sh4IxF_cyLovLKblYuHle9DmnOe_5/view?usp=sharing" 
+            target='_blank' 
+            className={theme === "light" ? 'CV' : 'CV dark_btn'}
+          >
             Look at cv
           </a>
         </div>

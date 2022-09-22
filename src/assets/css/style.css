@@ -12,6 +12,7 @@ html {
 :root {
   --yellow: #ffb100;
   --back: rgb(255, 244, 231);
+  --dark: #040911;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -23,6 +24,73 @@ html {
   width: 100%;
   height: auto;
   background-color: var(--back);
+  transition: 1s;
+}
+
+/* T H E M E */
+.theme {
+  width: 80px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px 0px 0px 25px;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  cursor: pointer;
+  z-index: 10;
+  position: fixed;
+  top: 8px;
+  right: 0px; 
+}
+.theme_btn {
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  border: 2px solid var(--yellow);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0px 2px;
+  transition: 1s;
+}
+.b_dark {
+  transform: translateX(26px);
+  transition: 1s;
+}
+.bounce {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--yellow);
+  font-size: 21px;
+  transition: .5s;
+}
+.bounce i {
+  transition: .5s;
+}
+.dark_font {
+  color: rgba(255, 244, 231, 0.8) !important;
+}
+.dark_bg {
+  background-color: var(--dark) !important;
+}
+.light_bg {
+  background-color: rgba(255, 244, 231, 0.8) !important;
+}
+.dark_btn {
+  background-color: var(--dark) !important;
+  border-color: var(--dark) !important;
+}
+.main_loader {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--back);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* N A V B A R */
@@ -148,9 +216,7 @@ html {
   font-size: 30px;
   position: relative;
   padding-left: 120px;
-}
-.home .line_span::after {
-  background-color: rgba(0, 0, 0, 0.8);
+  transition: 1s;
 }
 .line_span::after {
   content: "";
@@ -161,6 +227,9 @@ html {
   height: 4px;
   background-color: var(--yellow);
   border-radius: 2px;
+}
+.home .line_span::after {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .home .info .name {
   font-size: 70px;
@@ -295,24 +364,28 @@ html {
   font-size: 60px;
   margin-top: 10px;
   margin-bottom: 20px;
+  transition: 1s;
 }
 .about_info p {
   font-size: 18px;
   margin-top: 30px;
+  transition: 1s;
 }
 .about_info .socials {
   font-size: 30px;
   display: flex;
   gap: 25px;
   margin-top: 30px;
+  
 }
 .about_info .socials a {
   color: black;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .3s;
 }
 .about_info .socials a:hover {
   color: var(--yellow);
+  transition: .3s;
 }
 .skills {
   width: 50%;
@@ -334,6 +407,9 @@ html {
   flex-direction: column;
   justify-content: space-between;
   padding: 15px 0px;
+}
+.my_skills .line_span::after {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .my_skill .top {
   width: 100%;
@@ -369,6 +445,11 @@ html {
   white-space: nowrap;
   overflow: hidden;
   border-right: 4px solid rgba(0, 0, 0, 0.8);
+  transition: 1s;
+}
+.what_i_do h1.dark_top_anim {
+  border-right: 4px solid rgba(255, 244, 231, 0.8);
+  animation: typing 0.8s steps(11), blink 0.5s step-end infinite alternate;
 }
 .services_page .foot_line {
   width: 100%;
@@ -410,6 +491,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 1s;
 }
 .service_info p {
   font-size: 15px;
@@ -432,6 +514,7 @@ html {
   justify-content: space-between;
   align-items: center;
   color: var(--back);
+  transition: 1s;
 }
 .inline_item span:last-child {
   font-size: 18px;
@@ -459,6 +542,7 @@ html {
   letter-spacing: 5px;
   transform: rotate(-90deg);
   color: var(--back);
+  transition: 1s;
 }
 .my_portfolio {
   width: 84%;
@@ -475,7 +559,7 @@ html {
   cursor: pointer;
   padding-bottom: 5px;
   position: relative;
-  transition: 0.2s;
+  transition: 1s;
 }
 .filter label::after {
   content: "";
@@ -513,12 +597,27 @@ html {
   padding: 10px;
   gap: 35px;
 }
-.items::-webkit-scrollbar {
+.items_dark {
+  width: 100%;
+  height: 520px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 35px;
+}
+.items::-webkit-scrollbar,
+.items_dark::-webkit-scrollbar {
   display: block;
 }
 .items::-webkit-scrollbar-thumb {
   background-color: var(--yellow);
   border: 7px solid var(--back);
+  border-radius: 20px;
+}
+.items_dark::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+  border: 7px solid var(--dark);
   border-radius: 20px;
 }
 .project {
@@ -591,6 +690,7 @@ html {
 }
 .reviews h1 {
   font-size: 70px;
+  transition: 1s;
 }
 .mySwiper {
   height: 100%;
@@ -736,7 +836,7 @@ html {
   border: none;
   border-bottom: 1px solid #999;
   border-radius: 0px;
-  background-color: var(--back);
+  background-color: transparent;
   font-size: 20px;
   color: #666;
 }
@@ -756,6 +856,7 @@ html {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  background-color: transparent;
 }
 .button::before {
   content: "";
@@ -793,6 +894,7 @@ html {
   left: 3px;
   transition: 0.5s;
   z-index: 1;
+  transition: 1s;
 }
 .button:hover #submit_btn {
   color: var(--yellow);
@@ -810,9 +912,6 @@ html {
 }
 .swal2-confirm {
   background-color: var(--yellow) !important;
-}
-.loader {
-  transition: 1s;
 }
 
 @media screen and (max-width: 1492px) {
