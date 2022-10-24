@@ -52,7 +52,7 @@ function Home({theme}) {
           <h1 ref={dev} className={view ? 'dev typing_anim' : 'dev'}>
             Frontend Developer
           </h1>
-          <a href="https://drive.google.com/file/d/1A-0sh4IxF_cyLovLKblYuHle9DmnOe_5/view?usp=sharing" 
+          <a href="https://drive.google.com/file/d/1C7hf4zUDkz4deEQ-NxUfWaSaziTvDYsn/view?usp=sharing" 
             target='_blank' 
             className={theme === "light" ? 'CV' : 'CV dark_btn'}
           >
